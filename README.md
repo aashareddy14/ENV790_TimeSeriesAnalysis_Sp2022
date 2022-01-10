@@ -2,7 +2,7 @@
 
 Course repository for Time Series Analysis at Duke University, spring 2022
 
-Name: Aasha Reddy
+**Name:** Aasha Reddy
 
 
 **Meeting time:** MW 12:00 to 1:15 pm
