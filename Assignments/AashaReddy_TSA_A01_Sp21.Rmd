@@ -30,8 +30,10 @@ Q3. For this part we just want to see the path to your R project. No need to do 
 
 This is my working directory:
 
+\scriptsize
+
 ```{r}
 getwd()
-````
+```
 
-
+\normalsize
