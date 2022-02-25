@@ -8,6 +8,11 @@ editor_options:
   chunk_output_type: console
 ---
 
+
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(echo = TRUE, fig.align = 'center') 
+```
+
 ## Directions
 
 You should open the .rmd file corresponding to this assignment on RStudio. The file is available on our class repository on Github. And to do so you will need to fork our repository and link it to your RStudio.
@@ -129,6 +134,7 @@ energy_ts <- ts(data = energy_raw %>% select(-Month), start = c(1984, 1), freque
 solar_decomp <- decompose(energy_ts[,1], type = "additive")
 ```
 
+
 ```{r}
 # plot trend and random componenet
 plot(solar_decomp)
@@ -210,8 +216,8 @@ energy_ts_2012 <- ts(data = energy_raw_2012 %>% select(-Month), start = c(2012, 
 solar_decomp_2012 <- decompose(energy_ts_2012[,1], type = "additive")
 ```
 
+
 ```{r}
-# plot trend and random componenet
 plot(solar_decomp_2012)
 ```
 
@@ -224,8 +230,8 @@ The trend looks to be linearly increasing now. We no longer see the two differen
 wind_decomp_2012 <- decompose(energy_ts_2012[,2], type = "additive")
 ```
 
+
 ```{r}
-# plot trend and random componenet
 plot(wind_decomp_2012)
 ```
 
