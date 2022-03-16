@@ -1,0 +1,81 @@
+---
+title: "Final Project"
+author: "Aasha Reddy"
+date: "3/16/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# load libraries
+library(lubridate)
+library(ggplot2)
+library(forecast)  
+library(Kendall)
+library(tseries)
+library(outliers)
+library(tidyverse)
+library(smooth)
+library(sarima)
+```
+
+GOP Data: Bad, not enough hours
+
+```{r}
+# load data
+gop <- read.csv("Final Project/data/gop_sentiment.csv")
+
+# clean data with dates
+x <- gop %>%
+  mutate(tweet_created = mdy_hm(tweet_created))
+
+# aggregate by minute
+y <- x %>%
+  group_by(tweet_created) %>%
+  summarize(n = n(), retweets = sum(retweet_count))
+
+ggplot(y, aes(x = tweet_created, y = n)) + 
+  geom_line()
+```
+
+
+India Data: 
+
+Only 244 observations grouped at the hourly level, plot doesnt look that good/doesnt have any pattern.
+
+```{r}
+# load data
+india <- read.csv("Final Project/data/demonitization-tweets.csv")
+
+# clean data with dates, group by hour
+x <- india %>%
+  mutate(created = gsub(":.*", "", created), 
+         created = mdy_h(created)) %>%
+  group_by(created) %>%
+  summarize(n = n())
+
+x <- x[34:nrow(x),]
+
+ggplot(x, aes(x = created, y = n)) + 
+  geom_line()
+```
+
+
+Pop: Bad looks like a linear line
+
+```{r}
+# load data
+pop <- read.csv("Final Project/data/pop.csv")
+
+# clean data with dates, group by hour
+x <- pop %>%
+  select(value, date) %>%
+  rename(pop = value) %>%
+  mutate(date = mdy(date))
+
+ggplot(x, aes(x = date, y = pop)) + 
+  geom_line()
+```
