@@ -139,7 +139,7 @@ Pacf(arma_01, plot = F)
 0.9/(1 + 0.9)
 ```
 
-For ARMA(0,1) this is the same as an MA(1) model with the coefficient being $\theta = 0.9$. Based on this coefficient of 0.9, I would expect the lag 1 autocorrelation to be 0.9/(1 + 0.9) = 0.4737. From the below, we see the lag 1 autocorrelation from the simulated sample is actually 0.516 which is relatively close.
+For ARMA(0,1) this is the same as an MA(1) model with the coefficient being $\theta = 0.9$. From the below, we see the lag 1 autocorrelation from the simulated sample is actually 0.516 which is not close.
 
 ### Increase number of observations to $n=1000$ and repeat parts (a)-(d).
 
@@ -225,11 +225,9 @@ For the ARMA(1,0) model, this is AR(1) with the coefficient being $\phi = 0.6$, 
 Acf(arma_01, plot = F)
 
 Pacf(arma_01, plot = F)
-
-0.9/(1 + 0.9)
 ```
 
-For ARMA(0,1) this is the same as an MA(1) model with the coefficient being $\theta = 0.9$. Based on this coefficient of 0.9, I would expect the lag 1 autocorrelation to be 0.9/(1 + 0.9) = 0.4737. From the below, we see the lag 1 autocorrelation from the simulated sample is actually 0.458 which is also relatively close. This is similar in closeness to the expected value as when we had n = 100, though I would have expected it to be closer for n = 1000.
+For ARMA(0,1) this is the same as an MA(1) model with the coefficient being $\theta = 0.9$. Based on this coefficient of 0.9. From the below, we see the lag 1 autocorrelation from the simulated sample is actually 0.458 which very different.
 
 ## Q3
 
