@@ -87,6 +87,7 @@ ts_electricity_price <- ts(
 head(ts_electricity_price,15)
 tail(ts_electricity_price,15)
 
+plot(ts_electricity_price)
 ```
 
 ## Initial Plots
